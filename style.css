@@ -1,0 +1,1052 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 80px;
+  background-color: #ffffff;
+  display: flex;
+  padding: 20px 9%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;   /* apne hisaab se size adjust kar lena */
+  width: auto;
+}
+
+
+#jobs {
+  color: #6851ff;
+}
+
+/* NAV LINKS */
+.nav-anc {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-anc li a {
+  font-size: 17px;
+  color: #313131;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-anc li a:hover {
+  color: #6851ff;
+}
+
+/* RIGHT SIDE CONTROLS */
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+/* TOGGLE SWITCH */
+.switch {
+  position: relative;
+  width: 44px;
+  height: 22px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background: #1e90ff;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #313131;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* DARK MODE DEMO */
+.dark-mode {
+  background: #222;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-anc {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-anc.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+:root {
+    /* Color Variables */
+    --primary-color: #5540FF; /* Button/Border Purple */
+    --text-color: #1A1A1A;
+    --light-bg: #F9F8FF; /* Very light background for the section */
+    --upload-bg: #F5F5FF; /* Light background inside upload box */
+    --dark-gray: #333;
+    --medium-gray: #666;
+    --white: #FFFFFF;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Font ko apne project ke hisaab se badlein */
+}
+
+/* Header Section */
+.resume-checker-header {
+    background-color: var(--light-bg);
+    padding: 80px 0; /* Top aur bottom spacing */
+}
+
+.header-content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Two-column layout ke liye Flexbox */
+    align-items: center; /* Vertical alignment */
+    gap: 5%; /* Columns ke beech mein space */
+}
+
+/* Left Column Styling */
+.header-left-column {
+    flex: 1; /* Space le */
+    max-width: 50%;
+}
+
+.site-branding {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #4433CC;
+}
+
+.main-heading {
+    
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* Upload Box Styling */
+.upload-box {
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    padding: 40px 30px;
+    text-align: center;
+    background-color: var(--upload-bg);
+    max-width: 480px; /* Width set karein */
+}
+
+.upload-icon-container {
+    /* Icon container for spacing */
+    margin-bottom: 20px;
+}
+
+.cloud-icon {
+    /* Agar aap Font Awesome ya SVG use nahi kar rahe hain, toh yeh simple styling use karein */
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M144 160c44.2 0 80 35.8 80 80v24c0 17.7 14.3 32 32 32s32-14.3 32-32V240c0-71.1-57.9-128-128-128s-128 56.9-128 128v24c0 17.7 14.3 32 32 32s32-14.3 32-32V240zm608 0c-44.2 0-80 35.8-80 80v24c0 17.7-14.3 32-32 32s-32-14.3-32-32V240c0-70.7 57.3-128 128-128s128 57.3 128 128v24c0 17.7-14.3 32-32 32s-32-14.3-32-32V240zm-128-32c-74.8 0-136 61.2-136 136 0 27.7 8.3 53.6 22.4 75.3-29.4-18.7-52.5-47.9-63.5-81.8C351.9 444.2 284 512 208 512 93.1 512 0 418.9 0 304c0-72.2 38.6-136 96-172.6C105.5 108.9 146.3 80 192 80c25.4 0 49.3 10.3 67 28.9C293.1 43.3 349.5 0 416 0c107 0 192 85.9 192 192 0 1.2-.1 2.4-.1 3.6 52.8 19.8 88.1 72 88.1 132.4 0 79.5-64.5 144-144 144s-144-64.5-144-144c0-20.9 4.4-40.7 12.3-58.8-19.1-15.6-42.3-24.9-67.7-25.2-46.6.6-86.8 28.5-104.9 70.8-21.2-12.8-44.8-20-70.1-20.8-74.8 0-136 61.2-136 136s61.2 136 136 136c46.4 0 88.5-23.9 112-61.1 23.5 37.2 65.6 61.1 112 61.1 88.4 0 160-71.6 160-160z"/></svg>') no-repeat center;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M144 160c44.2 0 80 35.8 80 80v24c0 17.7 14.3 32 32 32s32-14.3 32-32V240c0-71.1-57.9-128-128-128s-128 56.9-128 128v24c0 17.7 14.3 32 32 32s32-14.3 32-32V240zm608 0c-44.2 0-80 35.8-80 80v24c0 17.7-14.3 32-32 32s-32-14.3-32-32V240c0-70.7 57.3-128 128-128s128 57.3 128 128v24c0 17.7-14.3 32-32 32s-32-14.3-32-32V240zm-128-32c-74.8 0-136 61.2-136 136 0 27.7 8.3 53.6 22.4 75.3-29.4-18.7-52.5-47.9-63.5-81.8C351.9 444.2 284 512 208 512 93.1 512 0 418.9 0 304c0-72.2 38.6-136 96-172.6C105.5 108.9 146.3 80 192 80c25.4 0 49.3 10.3 67 28.9C293.1 43.3 349.5 0 416 0c107 0 192 85.9 192 192 0 1.2-.1 2.4-.1 3.6 52.8 19.8 88.1 72 88.1 132.4 0 79.5-64.5 144-144 144s-144-64.5-144-144c0-20.9 4.4-40.7 12.3-58.8-19.1-15.6-42.3-24.9-67.7-25.2-46.6.6-86.8 28.5-104.9 70.8-21.2-12.8-44.8-20-70.1-20.8-74.8 0-136 61.2-136 136s61.2 136 136 136c46.4 0 88.5-23.9 112-61.1 23.5 37.2 65.6 61.1 112 61.1 88.4 0 160-71.6 160-160z"/></svg>') no-repeat center;
+    mask-size: contain;
+}
+
+.upload-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 5px;
+}
+
+.file-details {
+    font-size: 0.9rem;
+    color: var(--medium-gray);
+    margin-bottom: 20px;
+}
+
+.select-file-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 10px rgba(85, 64, 255, 0.3); /* Button Shadow */
+}
+
+.select-file-btn:hover {
+    background-color: #4433CC; /* Hover effect */
+}
+
+/* Right Column Styling */
+.header-right-column {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Image right side par ho */
+    padding-top: 50px;
+}
+
+.resume-mockup-image {
+    max-width: 100%;
+    height: auto;
+    /* Image ko thoda lift karne ke liye shadow */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+    .header-content-container {
+        flex-direction: column; /* Chote screens par columns ko vertically stack karein */
+        text-align: center;
+        gap: 50px;
+    }
+
+    .header-left-column {
+        max-width: 100%;
+    }
+
+    .main-heading {
+        font-size: 2.8rem;
+    }
+
+    .upload-box {
+        margin: 0 auto; /* Upload box ko center karein */
+    }
+    
+    .header-right-column {
+        justify-content: center;
+    }
+}
+
+/*  */
+
+/* Color variables from the header section are assumed to be available */
+
+/* ------------------------------------------- */
+/* ATS Checker Info Section Styles (RE-CORRECTED LAYOUT) */
+/* ------------------------------------------- */
+
+.ats-checker-info-section {
+    background-color: var(--white); 
+    padding: 80px 0;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+    /* Main container remains a flex row for two columns */
+    display: flex;
+    align-items: flex-start; /* Content top-aligned rahega */
+    gap: 50px; /* Space between the two columns */
+}
+
+/* Left Column - Image/Illustration */
+.info-left-column {
+    flex: 1; /* Equal space */
+    max-width: 45%; /* Image ke liye thodi kam width set kar raha hoon */
+    /* Agar aap chahen toh justify-content: center bhi laga sakte hain */
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.grader-illustration {
+    max-width: 100%; 
+    height: auto;
+    display: block;
+}
+
+/* Right Column - Text Content */
+.info-right-column {
+    flex: 1; /* Equal space */
+    max-width: 55%; /* Text ke liye thodi zyada width */
+    padding-left: 0;
+    text-align: left; /* Ensure text is left-aligned */
+
+    /* 💥 IMPORTANT: Right column itself is a flex container for its internal elements */
+    display: flex;
+    flex-direction: column; /* Iske andar ke items vertically stack honge */
+    justify-content: flex-start; /* Content top se start hoga */
+}
+
+.section-heading {
+    font-size: 2.5rem; 
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.body-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+/* Numbered Point Styling */
+.numbered-point {
+    display: flex;
+    align-items: flex-start; /* Circle aur text top align honge */
+    gap: 15px;
+    margin-top: 30px; /* Thodi space pichle paragraph se */
+    margin-bottom: 15px; /* Agle paragraph se space */
+    text-align: left;
+}
+
+.number-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    background-color: var(--primary-color); 
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0; /* Ensures the circle doesn't shrink */
+}
+
+.numbered-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.3;
+}
+
+
+/* --- Media Queries (Still important for responsiveness) --- */
+@media (max-width: 992px) {
+    .content-container {
+        flex-direction: column; /* Chote screens par wapas stack ho jaayenge */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .info-left-column,
+    .info-right-column {
+        max-width: 100%;
+        padding-left: 0;
+        text-align: center; /* Text center mein aa jayega */
+    }
+
+    .section-heading {
+        font-size: 2rem;
+    }
+    
+    /* Numbered points ko center mein lane ke liye */
+    .numbered-point {
+        justify-content: center; /* Circle aur text ka group center mein */
+        max-width: 100%; 
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left; /* Text circle ke baad left hi rahega */
+    }
+    
+    .body-text {
+        text-align: center; /* Paragraphs center ho jayenge */
+    }
+};
+
+
+/*  */
+
+
+/* --- Global Styles and Reset --- */
+
+h1, h2, h3 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* --- Header Section Styling --- */
+.headerwala {
+    text-align: center;
+    padding: 40px 20px 60px;
+    background-color: #f8f8fa;
+}
+
+.headerwala h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.headerwala p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* card  */
+
+
+
+/* (same as previous response, no changes needed) */
+
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* Base styles for the main content area */
+.page-heading-section {
+    text-align: center;
+    padding: 40px 20px 60px;
+}
+.page-heading-section h1 {
+    font-size: clamp(1.8em, 4vw, 2.5em); 
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+.page-heading-section p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Main Content Wrapper: The Two-Column Layout --- */
+.main-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    /* Default to one column on small screens */
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Styles for the left-hand text section */
+.list-section-title {
+    padding: 0 10px;
+}
+.list-section-title h2 {
+    font-size: clamp(1.5em, 3vw, 1.8em);
+    font-weight: 700; 
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+.list-section-title p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* --- Cards Grid Layout --- */
+.feature-cards-layout {
+    display: grid;
+    /* Mobile: 1 column. All cards stack. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: stretch; /* Crucial for equal height across rows on desktop */
+}
+
+.feature-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card h3 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+/* Icon Header and Icon Styling (Purple circle and icon) */
+.card-top-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #e6e6fa; /* Light purple circle background */
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+.card-icon-style {
+    color: #6a5acd; /* Purple icon color */
+    font-size: 1.2em;
+}
+
+/* Checklist Styling (Checkmark icons and list items) */
+.card-checklist {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+}
+.card-check-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.check-icon-style {
+    color: #6a5acd; /* Purple checkmark color */
+    font-size: 1.1em;
+    margin-right: 10px;
+    flex-shrink: 0; 
+}
+
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+/* Tablet and larger screens (e.g., 768px and up) */
+@media (min-width: 768px) {
+    .main-content-wrapper {
+        /* Layout: Title (1fr) | Cards (2fr) */
+        grid-template-columns: 1fr 2fr; 
+        gap: 40px;
+    }
+
+    .feature-cards-layout {
+        /* Inside the Cards section: 2 columns */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+     /* Content card spans two rows on tablet (1st column of the 2-column grid) */
+     .feature-card-content {
+        grid-row: span 2; 
+        grid-column: 1;
+     }
+     /* Remaining cards flow naturally in the second column */
+     .feature-card-skills {
+        grid-column: 2; 
+        grid-row: 1;
+     }
+     .feature-card-sections {
+        grid-column: 2; 
+        grid-row: 2;
+     }
+}
+
+/* Larger screens (Desktop, e.g., 1024px and up) */
+@media (min-width: 1024px) {
+    .main-content-wrapper {
+        /* Overall Layout: Title (1fr) | Cards (3fr) */
+        grid-template-columns: 1fr 3fr; 
+        gap: 50px;
+    }
+    
+    .feature-cards-layout {
+        /* The cards section is a 3-column grid */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 30px;
+        /* It is a 2-row grid to position the tall card */
+        grid-template-rows: auto auto; 
+    }
+
+    /* Positioning Cards for 1-Tall Card + 4 small cards in a 2x2 grid */
+    
+    /* Card 1: Content - Occupies 1st Column of the 3-column grid, spans 2 rows */
+    .feature-card-content {
+        grid-column: 1; 
+        grid-row: span 2; /* **KEY:** Makes Content card the height of two small cards */
+    }
+    
+    /* Card 2: Skills Suggestion - Top Row, 2nd Column */
+    .feature-card-skills {
+        grid-column: 2; 
+        grid-row: 1; 
+    }
+
+    /* Card 3: Resume sections - Top Row, 3rd Column */
+    .feature-card-sections {
+        grid-column: 3; 
+        grid-row: 1; 
+    }
+    
+    /* Card 4: Format - Bottom Row, 2nd Column */
+    .feature-card-format {
+        grid-column: 2; 
+        grid-row: 2; 
+    }
+
+    /* Card 5: Style - Bottom Row, 3rd Column */
+    .feature-card-style {
+        grid-column: 3;
+        grid-row: 2;
+    }
+    
+    /* This setup creates the perfect alignment: 
+       - Left: Resume optimization checklist (Text)
+       - Right Grid: Content (Tall), Skills/Sections (Top 2), Format/Style (Bottom 2)
+    */
+}
+
+
+
+
+/*  */
+
+
+
+
+
+
+
+/* --- Section Wrapper (The main two-column container) --- */
+.ats-section-wrapper {
+    max-width: 1400px; /* Wider container for the large visual */
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    /* Default: Stack on mobile */
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* --- Left Side: Visual/Image Container --- */
+.ats-visual-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Ensure no text is selectable in this area if it contains interactive elements */
+    user-select: none;
+    padding-bottom: 20px; /* Space below image on mobile */
+}
+
+.ats-main-image {
+    /* The image itself (the resume visual) */
+    max-width: 100%; 
+    height: auto;
+    /* You might need custom CSS to position the dashed lines/labels if they are separate */
+}
+
+/* --- Right Side: Text Content --- */
+.ats-text-content {
+    padding: 0 10px;
+}
+
+.ats-text-content h1 {
+    font-size: clamp(2em, 5vw, 2.8em); /* Responsive font size */
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.ats-text-content p {
+    font-size: 1.1em;
+    color: #4a4a4a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+/* --- Desktop Layout (Two Columns) --- */
+@media (min-width: 1024px) {
+    .ats-section-wrapper {
+        /* Define two columns: Visual (Image) and Text */
+        grid-template-columns: 1fr 1.2fr; /* Giving slightly more space to the text column */
+        gap: 60px;
+    }
+    
+    .ats-visual-container {
+        /* Adjust padding for desktop alignment */
+        padding-bottom: 0; 
+        justify-content: flex-start; /* Align image to the left edge of its container */
+    }
+    
+    .ats-text-content {
+        /* Align text content */
+        padding: 0;
+    }
+}
+
+
+/*  */
+
+
+
+
+.container {
+  justify-content: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #4a148c; /* Dark purple for heading */
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.upload-box {
+    border: 2px dashed #a0a0ff; /* Light blue dashed border */
+    background-color: #f9f9ff; /* Very light purple background for the box */
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-button {
+    background-color: #673ab7; /* Medium purple button */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #5e35b1; /* Slightly darker on hover */
+}
+
+.upload-button i {
+    font-size: 1.2em;
+}
+
+.upload-box p {
+    color: #777;
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.upload-box p:last-of-type {
+    margin-bottom: 20px; /* More space before privacy line */
+}
+
+.privacy-guaranteed {
+    font-size: 0.9em;
+    color: #4CAF50; /* Green for privacy text */
+}
+
+.privacy-guaranteed i {
+    margin-right: 5px;
+}
+
+
+/*  */
+
+
+/* --- Base Styles for Footer --- */
+.site-footer {
+    background-color: #6a5acd; /* Deep purple background */
+    color: #e0e0e0; /* Light grey text for contrast */
+    font-family: Arial, sans-serif;
+    padding-top: 60px; /* Padding above main content */
+    font-size: 1em;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Main Content Section (Top two columns) --- */
+.footer-main-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack columns on mobile */
+    gap: 40px;
+    padding-bottom: 40px; /* Space above the "Follow us" section or bottom line */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator line */
+}
+
+/* --- Left Column Styling --- */
+.footer-column-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.tagline {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.heart-icon {
+    color: #ff6b6b; /* Red heart */
+    margin: 0 3px;
+}
+
+.description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    max-width: 400px; /* Limit width for readability */
+    margin-bottom: 30px; /* Space before Follow us */
+}
+
+/* --- Follow Us Section --- */
+.follow-us h4 {
+    font-size: 1.1em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon-link {
+    color: white;
+    font-size: 1.3em;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly visible circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icon-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+/* --- Right Column Styling --- */
+.footer-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between contact and life at hiringmine */
+}
+
+.footer-column-right h4 {
+    font-size: 1.1em;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.footer-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.footer-link-icon {
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+/* --- Footer Bottom Section (Privacy, Terms, Copyright) --- */
+.footer-bottom {
+    background-color: #5a4bbd; /* Slightly darker purple for the bottom bar */
+    padding: 20px 0;
+}
+
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column; /* Stack on mobile */
+    align-items: center;
+    gap: 15px;
+}
+
+.bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.bottom-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: color 0.3s;
+}
+
+.bottom-link:hover {
+    color: white;
+}
+
+.copyright {
+    font-size: 0.85em;
+    color: #cccccc;
+    margin: 0;
+}
+
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+@media (min-width: 768px) {
+    .footer-main-content {
+        grid-template-columns: 2fr 1fr; /* Two columns on larger screens */
+    }
+
+    .footer-bottom-container {
+        flex-direction: row; /* Row layout for links/copyright on larger screens */
+        justify-content: space-between; /* Space out items */
+    }
+}
+
+@media (min-width: 1024px) {
+    .site-footer {
+        padding-top: 80px;
+    }
+    .footer-main-content {
+        gap: 80px;
+    }
+    .description {
+        max-width: 450px;
+    }
+}
